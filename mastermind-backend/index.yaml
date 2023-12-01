@@ -1,0 +1,6 @@
+indexes:
+  - kind: GameRecord
+    properties:
+      - name: userId
+      - name: score
+        direction: desc

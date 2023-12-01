@@ -1,0 +1,164 @@
+1695524990148:findAllBooks
+1695525014466:find-all-books
+1695525076611:help
+1695525091392:stacktrace
+1695525464747:find-all-books
+1695525483086:save-book
+1695525510129:save-book abc wolber 2023
+1695525519152:find-all-books
+1700935025433:help
+1700935040360:find-all-books
+1701128960247:save-book "The Idiot" "Dostoyevsky" 1923
+1701128989474:find-all-books
+1701131940315:help
+1701131954824:find-all-records
+1701131968702:remove-all-records
+1701132106564:help
+1701132124052:remove-records-by-user-id 123
+1701132235874:save-record 123 90
+1701132257674:find-all-records
+1701132296885:find-by-user-id 123
+1701132312046:save-record 001 100
+1701132315298:find-by-user-id 123
+1701132320788:find-all-records
+1701132354925:remove-records-by-user-id 123
+1701132359061:find-all-records
+1701132364035:find-by-user-id 123
+1701132380691:remove-records-by-user-id 123
+1701134299767:help
+1701134308951:remove-all-records
+1701134344756:save-record 123 90 12/31/2023
+1701134354685:find-all-records
+1701134365246:find-by-user-id 123
+1701137764635:help
+1701138070110:find-all-records
+1701138135018:save-or-update-handle 123 Jack
+1701138148232:find-all-records
+1701138302816:find-by-user-id 001
+1701138319936:find-by-user-id 123
+1701146278727:help
+1701146289705:remove-all-records
+1701146299754:find-all-records
+1701146330165:save-record 001 90 11/27/2023
+1701146333800:find-all-records
+1701146358049:save-record 123 100 20/10/2023
+1701146360569:find-all-records
+1701146466465:help
+1701146476567:find-all-records
+1701146519921:save-or-update-handle 001 Jack
+1701146524317:find-all-records
+1701146537904:save-or-update-handle 123 Wolber
+1701146540420:find-all-records
+1701146597179:save-or-update-handle 123 David
+1701146601785:find-all-records
+1701146671984:find-by-user-id 123
+1701147030594:remove-all-records
+1701147036214:find-all-records
+1701147039884:help
+1701147060919:save-or-update-handle 123 Jack
+1701147504554:help
+1701147522695:save-or-update-handle 123 Jack
+1701147553426:find-all-records
+1701147560531:save-or-update-handle 123 Wolber
+1701147564109:find-all-records
+1701147670944:save-or-update-handle 123 W
+1701147674390:find-all-records
+1701147937511:remove-all-records
+1701147973970:help
+1701147980987:find-all-records
+1701148002943:save-or-update-handle 123 Jack
+1701148008008:save-or-update-handle 123 Wolber
+1701148022031:find-all-records
+1701148132475:save-or-update-handle 001 Vincent
+1701158711934:help
+1701158731728:find-all-records
+1701210079432:help
+1701303073931:find-all-game-records
+1701303119162:remove-by-id 5138716758638592
+1701303124915:find-all-game-records
+1701324146134:help
+1701324176342:find-all-game-records
+1701324184062:find-all-game-records 0 1
+1701324195950:find-all-game-records 0 2
+1701324212921:find-all-game-records 1 1
+1701324231668:find-all-game-records 1 40
+1701324244940:find-all-game-records 0 40
+1701324594993:help
+1701324702339:find-game-records-by-user-id 123 0 1
+1701324706690:find-game-records-by-user-id 123 0 2
+1701324715215:find-game-records-by-user-id 123 1 2
+1701368680047:help
+1701368700722:find-all-game-records 0 3
+1701368711061:find-all-game-records 0 5
+1701368725984:find-all-game-records 1 5
+1701368809676:help
+1701368845539:find-game-records-by-user-id 123 0 3
+1701368874438:find-game-records-by-user-id 002 0 2
+1701368919073:find-game-records-by-user-id
+1701368936127:find-game-records-by-user-id 001 0 1
+1701368955226:stacktrace
+1701369013266:help
+1701369043413:find-game-records-by-user-id 123 0 2
+1701369223477:find-all-game-records 0 2
+1701369679241:help
+1701369700026:find-game-records-by-user-id 002 0 1
+1701369743227:hel
+1701369746156:help
+1701369760087:find-game-records-by-user-id 002 0 2
+1701370231483:help
+1701370252726:find-game-records-by-user-id 002 0 2
+1701370681935:help
+1701370699464:find-all-game-records 0 3
+1701370718049:find-game-records-by-user-id 002 0 2
+1701371365903:help
+1701371381804:find-game-records-by-user-id 002 0 2
+1701371526858:help
+1701371540302:find-all-game-records 001 0 2
+1701371553959:find-all-game-records 001 1 2
+1701371582006:find-all-game-records 0 1
+1701371606291:find-all-game-records 001 0 2
+1701371755258:find-all-game-records 001 1 2
+1701371769055:find-all-game-records 123 1 2
+1701371819490:find-all-game-records 002 1 2
+1701371850440:find-all-game-records 002 1 4
+1701371873036:find-all-game-records 001 0 1
+1701371915857:find-all-game-records 0 2
+1701371947092:find-game-records-by-user-id 123 0 2
+1701371978393:help
+1701372000549:find-game-records-by-user-id 123 0 1
+1701372753878:help
+1701372772847:find-game-records-by-user-id 002 0 1
+1701372777366:find-game-records-by-user-id 002 0 3
+1701372788795:find-game-records-by-user-id 123 0 2
+1701373348954:help
+1701373362629:find-game-records-by-user-id 123 0 4
+1701375843724:help
+1701375858122:find-record-counts
+1701376188484:help
+1701376206115:find-user-id-count 123
+1701376231136:find-user-id-count Of2c6iqhwARxpuf33gdSS9dOS4k2
+1701457679333:help
+1701457688767:find-all-records
+1701457745953:find-all-game-records
+1701457754497:find-all-game-records 0 10
+1701457842854:help
+1701457852226:find-all-records
+1701457874483:find-game-records-by-user-id 002
+1701457879512:find-game-records-by-user-id 002 0 3
+1701457894270:find-by-user-id 123
+1701457944467:find-all-game-records 123 0 4
+1701457953462:find-all-game-records 0 4
+1701458070142:save-or-update-handle 123 David
+1701458079140:find-by-user-id 123
+1701458097521:find-record-count
+1701458101809:find-record-count 123
+1701458118986:find-user-id-count 123
+1701458297394:save-record Q5oYAf1VfrcdQVdHuwg7h1MLfWL2 75 11/31/2023
+1701458324341:find-game-records-by-user-id Q5oYAf1VfrcdQVdHuwg7h1MLfWL2 0 2
+1701458484656:remove-by-id 5750704903815168
+1701458488469:find-game-records-by-user-id Q5oYAf1VfrcdQVdHuwg7h1MLfWL2 0 2
+1701458562342:find-by-user-id Q5oYAf1VfrcdQVdHuwg7h1MLfWL2
+1701458595104:save-or-update-handle Q5oYAf1VfrcdQVdHuwg7h1MLfWL2 Tina
+1701458599184:find-by-user-id Q5oYAf1VfrcdQVdHuwg7h1MLfWL2
+1701459863455:help
+1701459931105:save-record Q5oYAf1VfrcdQVdHuwg7h1MLfWL2 10 12/01/2023

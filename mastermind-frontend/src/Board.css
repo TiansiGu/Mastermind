@@ -1,0 +1,132 @@
+
+.board-container {
+  height: 100%;
+  padding: 0;
+  background-image: url("../public/bg.png");
+  background-size: cover;
+  height: 100vh;
+  font-family: game-font;
+}
+
+img {
+  margin-top: 60px;
+  width: 300px;
+}
+
+/* .App {
+  margin: 0;
+  background-image: url("https://www.shutterstock.com/shutterstock/videos/1078014947/thumb/1.jpg?ip=x480"); 
+  background-attachment: fixed; 
+  background-color: #0a0101;
+  height: 100% 
+} */
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+
+.board-row {
+    display: flex;
+    align-items: center; /* Vertically center the button and circles within the flex container */
+}
+
+.submit {
+  background-color: #343a40;
+  border: none;
+  height: 30px;
+  color: #ffffff;
+}
+.color-pick-section {
+  color: #ffffff;
+}
+.color-pick-button {
+  border: none;
+  width: 60px;
+  height: 40px;
+}
+
+.select {
+  margin-top: 10px;
+  font-size: larger;
+}
+
+
+.mastermind-header {
+  background-color: #343a40;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #B8860B;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.header-textbox {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.ranking-container,
+.settings-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ranking-container {
+  margin-right: 15px; /* Add margin between Ranking and Settings */
+}
+
+.settings-text {
+  margin-left: 4px; /* Adjust the margin as needed */
+}
+
+.instruction {
+  color: #ffffff;
+  background-color: #3498db; /* Set the background color to a beautiful blue */
+  padding: 10px; /* Add some padding to the content */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.prompt {
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: large;
+  font-weight: bold;
+  display: flex; 
+  justify-content: center; 
+  align-items: center
+}
+
+
+.play-again {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */ 
+    padding-bottom: 15px;
+}
+
+.play-again-button {
+    background-color: #343a40;
+    border: none;
+}
+
+.board {
+  margin-left: 25px;
+}
+

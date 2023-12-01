@@ -1,0 +1,68 @@
+  .startpage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url("../../public/entry-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: game-font;
+    font-size: large;
+  }
+  
+ 
+
+  .input-box {
+    margin-bottom: 14vh;
+    justify-content: end;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-inner-box {
+    justify-content: end;
+    align-items: center;
+    display: flex;
+  }
+  .log {
+    justify-content: end;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .input-box input {
+    padding: 15px;
+    margin-right: 30px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+  }
+
+  input:focus {
+    border-color: white; /* 黑色边框颜色 */
+    outline: none; /* 去除输入框获取焦点时的默认外边框 */
+  }
+  
+  .input-box button {
+    padding: 15px;
+  }
+
+  button {
+    /* Style for the default button */
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    /* Style for the button on hover */
+    background-color: #081408;
+    color: white;
+  }
+  

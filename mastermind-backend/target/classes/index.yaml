@@ -1,0 +1,4 @@
+<datastore-index kind="GameRecord" ancestor="false" source="manual">
+    <property name="userId" />
+    <property name="score" direction="desc" />
+</datastore-index>

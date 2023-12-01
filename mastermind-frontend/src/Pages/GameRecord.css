@@ -1,0 +1,48 @@
+/* GameRecord.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40; 
+  }
+
+  .game-record-container {
+    padding: 20px; /* Add padding for content spacing */
+    width: 100vw;
+    height: 100vh;
+    font-family:'Segoe UI';
+    cursor: pointer;
+  }
+
+  p {
+
+  }
+  
+  .header-container {
+    background-color: #ffffff; /* White background for the header */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+    padding: 20px; /* Add padding for the header */
+    margin-bottom: 20px; /* Add margin at the bottom of the header */
+  }
+  
+  .back-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #343a40; /* Blue color for the back arrow */
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .back-container p {
+    margin-left: 10px;
+  }
+
+  .select-container {
+    margin-bottom: 10px;
+    width: 200px;
+  }
+  
+  /* ... (rest of the styling) */
+  
