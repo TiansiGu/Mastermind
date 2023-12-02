@@ -162,3 +162,24 @@
 1701458599184:find-by-user-id Q5oYAf1VfrcdQVdHuwg7h1MLfWL2
 1701459863455:help
 1701459931105:save-record Q5oYAf1VfrcdQVdHuwg7h1MLfWL2 10 12/01/2023
+1701480350909:help
+1701480361207:find-all-records
+1701480519242:save-record"test""100"""2000/00/00
+1701480561973:save-record "test" "100" "2000/00/00"
+1701485720287:help
+1701485767977:save-item
+1701485778015:find-all-item-records
+1701485820836:save-item Computer mac 10 2
+1701485824274:find-all-item-records
+1701488393566:help
+1701488401915:find-all-records
+1701490986811:help
+1701491011790:find-all-item-records
+1701491759027:help
+1701491786931:save-record test 100 000
+1701493117371:help
+1701493130201:find-all-item-records
+1701495782720:help
+1701495795056:find-all-records
+1701495821510:save-or-update-total-score 1234 200
+1701495827313:find-all-records

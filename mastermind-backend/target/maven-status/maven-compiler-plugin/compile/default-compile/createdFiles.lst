@@ -1,9 +1,13 @@
 com/Mastermind/gameRecord/GameRecordController.class
+com/Mastermind/itemRecord/ItemRecordController.class
 com/Mastermind/userRecord/UserRecord.class
 com/Mastermind/userRecord/UserRecordDemoApplication.class
 com/Mastermind/gameRecord/GameRecordDemoApplication.class
+com/Mastermind/itemRecord/ItemRecord.class
 com/Mastermind/userRecord/UserRecordRepository.class
 com/Mastermind/userRecord/UserRecordController.class
 com/Mastermind/gameRecord/GameRecord.class
 com/Mastermind/MastermindApplication.class
+com/Mastermind/itemRecord/ItemRecordRepository.class
 com/Mastermind/gameRecord/GameRecordRepository.class
+com/Mastermind/itemRecord/ItemRecordDemoApplication.class

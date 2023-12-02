@@ -68,7 +68,7 @@ public class GameRecordDemoApplication {
       return "remove by user id success";
   }
 
-  @ShellMethod("Removes records by userId: <userId>")
+  @ShellMethod("Removes records by Id: <Id>")
   public String removeById(Long id) {
       this.gameRecordRepository.deleteById(id);
       return "remove by id success";
