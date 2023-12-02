@@ -3,8 +3,8 @@ import com.google.cloud.spring.data.datastore.core.mapping.Entity;
 import org.springframework.data.annotation.Id;
 
 /**
- * Persistent Class GameRecord
- * GameRecord entity in the DB has 2 columns: userId and score
+ * Persistent Class ItemRecord
+ * ItemRecord entity in the DB has 2 columns: userId and score
  */
 @Entity(name = "GameRecord")
 public class GameRecord {
