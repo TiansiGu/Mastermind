@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./GameRecord.css"; // Import your custom CSS file for styling
 import axios from "axios";
 
 import Pagination from "../Components/Pagination";
 
-function GameRecord({ onGamePageChange, userId }) {
+function GameRecord({ onGamePageChange, currentId }) {
   const [selectedComponent, setSelectedComponent] = useState(true); //true represents diplaying userRecords
+  const [userId, setUserId] = useState("");
 
   // A list of gameRecords fetched by a specific userId
   // eg: [ { id: 5138716758638592, score: 120, date: "2023-01-15" },
@@ -25,9 +27,12 @@ function GameRecord({ onGamePageChange, userId }) {
   async function getUserScores() {
     try {
       const response = await axios.get(
-        `https://mastermind-backend-tiansi.wl.r.appspot.com/game/findByUserId?userId=${userId}&page=${page}&size=${size}`
+        `https://matermind-backend.wl.r.appspot.com/game/findByUserId?userId=${
+          currentId ? currentId : localStorage.getItem("playerId")
+        }&page=${page}&size=${size}`
       );
       setUserScores(response.data);
+      console.log("getUserScores", response.data);
       setLoading(false);
     } catch (error) {
       setError(error.message);
@@ -38,7 +43,7 @@ function GameRecord({ onGamePageChange, userId }) {
   async function getUserScores1(p) {
     try {
       const response = await axios.get(
-        `https://mastermind-backend-tiansi.wl.r.appspot.com/game/findByUserId?userId=${userId}&page=${p}&size=${size}`
+        `https://matermind-backend.wl.r.appspot.com/game/findByUserId?userId=${userId}&page=${p}&size=${size}`
       );
       setUserScores(response.data);
       setLoading(false);
@@ -52,13 +57,13 @@ function GameRecord({ onGamePageChange, userId }) {
   async function getHighScores() {
     try {
       const response = await axios.get(
-        `https://mastermind-backend-tiansi.wl.r.appspot.com/game/findAllRecords?page=${page}&size=${size}`
+        `https://matermind-backend.wl.r.appspot.com/game/findAllRecords?page=${page}&size=${size}`
       );
 
       // Fetch userName for each userId in highScores
       const highScorePromises = response.data.map(async (highScore) => {
         const user = await axios.get(
-          `https://mastermind-backend-tiansi.wl.r.appspot.com/user/findByUserId?userId=${highScore.userId}&page=${page}&size=${size}`
+          `https://matermind-backend.wl.r.appspot.com/user/findByUserId?userId=${highScore.userId}&page=${page}&size=${size}`
         );
         return {
           id: highScore.id,
@@ -71,7 +76,9 @@ function GameRecord({ onGamePageChange, userId }) {
 
       // Wait for all promises to resolve
       const highScoresWithNames = await Promise.all(highScorePromises);
+      console.log("getHighScores", highScoresWithNames);
       setHighScores(highScoresWithNames);
+      setLoading(false);
     } catch (error) {
       setError(error.message);
     }
@@ -84,7 +91,9 @@ function GameRecord({ onGamePageChange, userId }) {
     try {
       // console.log("start axios request");
       const response = await axios.get(
-        `https://mastermind-backend-tiansi.wl.r.appspot.com/game/findUserIdCount?userId=${userId}`
+        `https://matermind-backend.wl.r.appspot.com/game/findUserIdCount?userId=${
+          currentId ? currentId : localStorage.getItem("playerId")
+        }`
       );
       // console.log(response.data);
       setNumOfRecordByUserId(response.data);
@@ -96,9 +105,7 @@ function GameRecord({ onGamePageChange, userId }) {
 
   const getNumOfAllRecord = () => {
     axios
-      .get(
-        `https://mastermind-backend-tiansi.wl.r.appspot.com/game/findRecordCount`
-      )
+      .get(`https://matermind-backend.wl.r.appspot.com/game/findRecordCount`)
       .then((response) => {
         setNumOfAllRecord(response.data);
       })
@@ -126,7 +133,18 @@ function GameRecord({ onGamePageChange, userId }) {
     getNumOfAllRecord();
     getUserScores();
     getHighScores();
-  }, [selectedComponent, page, size]);
+  }, [selectedComponent, page, size, userId]);
+
+  useEffect(() => {
+    console.log("currentId", currentId);
+    if (!currentId) {
+      setUserId(localStorage.getItem("playerId"));
+      console.log("localStorage");
+    } else {
+      console.log("set currentId");
+      setUserId(currentId);
+    }
+  }, []);
 
   useEffect(() => {
     setPage(0);
@@ -139,7 +157,7 @@ function GameRecord({ onGamePageChange, userId }) {
       const preNum = numOfRecordByUserId;
       console.log("The total before delete is " + preNum);
       const response = await axios.delete(
-        `https://mastermind-backend-tiansi.wl.r.appspot.com/game/deleteById?id=${id}`
+        `https://matermind-backend.wl.r.appspot.com/game/deleteById?id=${id}`
       );
       console.log("Game record deleted successfully:", response.data);
 
@@ -165,8 +183,12 @@ function GameRecord({ onGamePageChange, userId }) {
   return (
     <Container>
       <div className="game-record-container">
+        {/* <div>The user scores records is {userScores}</div> */}
         <div className="back-container" onClick={onGamePageChange}>
-          <FontAwesomeIcon icon={faArrowLeft} size="2x" />
+          <Link to={"/play"} style={{ textDecoration: "none", color: "black" }}>
+            <FontAwesomeIcon icon={faArrowLeft} size="1x" />
+            <span className="ranking-text"> Back to Game</span>
+          </Link>
         </div>
         <div className="select-container">
           {/* Dropdown to select the component */}
@@ -182,6 +204,15 @@ function GameRecord({ onGamePageChange, userId }) {
         {/* UserScores component */}
         {selectedComponent && (
           <div className="score-container">
+            <Row>
+              <Col>
+                <strong>Score</strong>
+              </Col>{" "}
+              <Col>
+                <strong>Date</strong>
+              </Col>
+              <Col></Col>
+            </Row>
             {userScores.map((userScore) => (
               <Row key={userScore.id}>
                 <Col>{userScore.score}</Col>
@@ -199,6 +230,8 @@ function GameRecord({ onGamePageChange, userId }) {
           </div>
         )}
         {/* HighScores component */}
+        {/* <div>{highScores[0]}</div> */}
+
         {!selectedComponent && (
           <div className="score-container">
             {/* <h2>High Scores</h2> */}

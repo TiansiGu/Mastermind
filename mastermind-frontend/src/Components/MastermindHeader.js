@@ -1,12 +1,9 @@
 // Header Component
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faCog, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
-function MastermindHeader({ onHandleUpdate, onPageUpdate }) {
-  const handleRankingClick = () => {
-    onPageUpdate();
-  };
-
+function MastermindHeader({ onHandleUpdate }) {
   const handleSettingClick = () => {
     onHandleUpdate("");
   };
@@ -19,13 +16,32 @@ function MastermindHeader({ onHandleUpdate, onPageUpdate }) {
           <p>Guess the secret colors!</p>
         </div>
         {/** Render the ranking text */}
-        <div className="ranking-container" onClick={handleRankingClick}>
-          <span className="ranking-text">Ranking</span>
+        <div className="ranking-container">
+          <Link to="/record" style={{ textDecoration: "none", color: "white" }}>
+            <span className="ranking-text">Ranking</span>
+          </Link>
         </div>
         {/* Render the settings icon and text */}
-        <div className="settings-container" onClick={handleSettingClick}>
-          <FontAwesomeIcon icon={faCog} size="2x" />
-          <span className="settings-text">Settings</span>
+        <div>
+          <Link
+            to="/"
+            className="settings-container"
+            style={{ textDecoration: "none", color: "white" }}
+            onClick={handleSettingClick}
+          >
+            <FontAwesomeIcon icon={faCog} size="2x" />
+            <span className="settings-text">Settings</span>
+          </Link>
+        </div>
+        <div>
+          <Link
+            to="/market"
+            className="market-container"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <FontAwesomeIcon icon={faShoppingBag} size="2x" />
+            {/* <span className="settings-text">Market</span> */}
+          </Link>
         </div>
       </div>
     </div>

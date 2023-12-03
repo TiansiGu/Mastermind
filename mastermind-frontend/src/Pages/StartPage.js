@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./StartPage.css";
 import axios from "axios";
 
@@ -8,6 +9,8 @@ const StartPage = ({ onHandleChange, onUserIdChange }) => {
   // user is the currently logged in user
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState("");
+  // get history object for page navigations
+  const navigate = useNavigate();
 
   // this will be called by the LoginForm
   const HandleLogin = (user, userId) => {
@@ -27,7 +30,11 @@ const StartPage = ({ onHandleChange, onUserIdChange }) => {
     if (handle) {
       await onHandleChange(handle);
       handleSubmitHandle();
+      //Imperative navigation. Didn't use <Link> because don't want to
+      //enter the play game page if `handle` is empty
+      navigate("/play");
     } else {
+      // Input cannot be empty
       alert("You need to enter a handle before starting the game");
     }
   };
@@ -41,7 +48,7 @@ const StartPage = ({ onHandleChange, onUserIdChange }) => {
 
     try {
       const response = await axios.post(
-        "https://mastermind-backend-tiansi.wl.r.appspot.com/user/saveOrUpdateHandle",
+        "https://matermind-backend.wl.r.appspot.com/user/saveOrUpdateHandle",
         postData
       );
       console.log("Response:", response.data);

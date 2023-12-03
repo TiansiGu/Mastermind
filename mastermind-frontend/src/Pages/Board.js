@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Button, Image, Modal } from "react-bootstrap";
-import "../Board.css";
+import "./Board.css";
 import axios from "axios";
 
 import OneGuessBoard from "../Components/OneGuessBoard";
@@ -9,7 +9,7 @@ import MastermindHeader from "../Components/MastermindHeader";
 import Instruction from "../Components/Instruction";
 
 // Component of the entire game board, the level of a round of game
-function Board({ onHandleChange, onGamePageChange, userId }) {
+function Board({ onHandleChange, onGamePageChange, currentId }) {
   // Pick a color from color box, and set the currentColor that you want to guess
   const [currentColor, setCurrentColor] = useState("#a3a3a3");
   const colors = ["red", "blue", "green", "yellow", "orange", "purple"];
@@ -97,7 +97,12 @@ function Board({ onHandleChange, onGamePageChange, userId }) {
     }
   }, [isWin, currentActiveRow]);
 
-  const handleSaveGame = async () => {
+  const handleSaveGame = () => {
+    handleAddGameRecord();
+    handleUpdateScore();
+  };
+
+  const handleAddGameRecord = async () => {
     // Implement save game logic here
     await setCurrentDate(new Date());
     let date = currentDate.toLocaleString("en-US", {
@@ -107,19 +112,20 @@ function Board({ onHandleChange, onGamePageChange, userId }) {
       hour: "numeric",
       minute: "numeric",
       second: "numeric",
-      timeZone: "America/Los_Angeles", // Set the time to be PST
+      timeZone: "America/Los_Angeles", // Set time to be PST
     });
     console.log(date);
     const postData = {
-      userId,
+      userId: currentId ? currentId : localStorage.getItem("playerId"),
       score,
       date,
     };
     try {
       const response = await axios.post(
-        "https://mastermind-backend-tiansi.wl.r.appspot.com/game/saveRecord",
+        "https://matermind-backend.wl.r.appspot.com/game/saveRecord",
         postData
       );
+      console.log("The user id is " + currentId);
       console.log("Response:", response.data);
     } catch (error) {
       console.error("Error posting data:", error);
@@ -128,12 +134,24 @@ function Board({ onHandleChange, onGamePageChange, userId }) {
     handleClose();
   };
 
+  const handleUpdateScore = async () => {
+    const postData = {
+      userId: currentId ? currentId : localStorage.getItem("playerId"),
+      score,
+    };
+    try {
+      const response = await axios.post(
+        "https://matermind-backend.wl.r.appspot.com/user/saveOrUpdateTotalScore",
+        postData
+      );
+    } catch (error) {
+      console.error("Error posting data:", error);
+    }
+  };
+
   return (
     <div className="board-container">
-      <MastermindHeader
-        onHandleUpdate={onHandleChange}
-        onPageUpdate={onGamePageChange}
-      />
+      <MastermindHeader onHandleUpdate={onHandleChange} />
       <div className="board">
         {/* use bootstrap grid system */}
         <div className="row mt-3">

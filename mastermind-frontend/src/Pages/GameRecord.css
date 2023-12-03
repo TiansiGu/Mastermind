@@ -14,10 +14,6 @@ body, html {
     cursor: pointer;
   }
 
-  p {
-
-  }
-  
   .header-container {
     background-color: #ffffff; /* White background for the header */
     border-radius: 10px; /* Rounded corners for a softer look */
@@ -32,7 +28,7 @@ body, html {
     align-items: center;
     color: #343a40; /* Blue color for the back arrow */
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 25px;
   }
   
   .back-container p {
@@ -44,5 +40,4 @@ body, html {
     width: 200px;
   }
   
-  /* ... (rest of the styling) */
   

@@ -26,6 +26,7 @@ function PaginationComponent({
   // Make sure when switch between two kinds of records, reset the current active page option to be page 1
   useEffect(() => {
     setCurrentPage(0);
+    onPageChange(0);
     // console.log("This effect is executed. The current page is " + currentPage);
   }, [select]);
 

@@ -1,0 +1,53 @@
+body, html {
+    margin: 0;
+    padding: 8;
+    background-color: #f8f9fa;
+    color: #343a40; 
+  }
+
+  .market-container {
+    display: flex;
+    padding: 20px; /* Add padding for content spacing */
+    flex-direction: column;
+    font-family:'Segoe UI';
+    cursor: pointer;
+    color: #343a40; 
+    padding: 20px;
+  }
+
+  .total-score-container {
+    display: flex;
+    width: 95vw;
+    margin-left: 10vw;
+    justify-content: flex-start;
+    font-size: 20px;
+    color:blue
+  }
+
+  .headlink-container {
+    cursor: pointer;
+    display: flex;
+    width: 95vw;
+    margin-left: 10vw;
+    justify-content: flex-start;
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  .link {
+    margin-right: 15px;
+    color: #343a40; 
+  }
+
+  .product-container {
+    width: 95vw;
+    margin-left: 10vw;
+    color: #343a40; 
+  }
+
+  .product-item {
+    font-weight: lighter;
+  }
+
+
+

@@ -2,7 +2,7 @@
 .board-container {
   height: 100%;
   padding: 0;
-  background-image: url("../public/bg.png");
+  background-image: url("../../public/bg.png");
   background-size: cover;
   height: 100vh;
   font-family: game-font;
@@ -79,17 +79,20 @@ img {
   flex-grow: 1;
 }
 
+
 .ranking-container,
-.settings-container {
+.settings-container, .market-container {
+  /* margin-right: 10px; */
   display: flex;
   align-items: center;
   cursor: pointer;
   font-weight: 600;
 }
 
-.ranking-container {
-  margin-right: 15px; /* Add margin between Ranking and Settings */
+.ranking-container{
+  margin-right: 18px;
 }
+
 
 .settings-text {
   margin-left: 4px; /* Adjust the margin as needed */
