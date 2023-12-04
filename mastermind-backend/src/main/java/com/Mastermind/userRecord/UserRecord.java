@@ -17,12 +17,14 @@ public class UserRecord {
     String handle;
     int totalScore;
 
+    // Constructor
     public UserRecord(String userId, String handle, int totalScore) {
         this.userId = userId;
         this.handle = handle;
         this.totalScore = totalScore;
     }
 
+    // Getter and Setter Methods for each data members
     public long getId() {
         return this.id;
     }
@@ -56,6 +58,10 @@ public class UserRecord {
     }
 
 
+    /**
+     * Override of toString method
+     * @return a string that shows id, userId, handle, and totalScore
+     */
     @Override
     public String toString() {
         return "{" +

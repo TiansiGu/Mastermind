@@ -11,10 +11,19 @@ import org.springframework.web.bind.annotation.*;
 public class GameRecordController {
   private final GameRecordRepository gameRecordRepository;
 
+  /**
+   * Constructor
+   * @param gameRecordRepository
+   */
   public GameRecordController(GameRecordRepository gameRecordRepository) {
     this.gameRecordRepository = gameRecordRepository;
   }
 
+  /**
+   * saveOrUpdateHandle
+   * @param gameRecord (userId score date)
+   * @return message
+   */
   @PostMapping("/game/saveRecord")
   @CrossOrigin(origins = "*")
   public String saveRecord(@RequestBody GameRecord gameRecord) {
@@ -25,6 +34,11 @@ public class GameRecordController {
     return "save success";
   }
 
+  /**
+   * findAllRecords
+   * @param page,size
+   * @return the records in a particular page with a particular number of records in a page (JSON by url)
+   */
   @GetMapping("/game/findAllRecords")
   @ResponseBody
   @CrossOrigin(origins = "*")
@@ -36,6 +50,10 @@ public class GameRecordController {
     return recordList;
   }
 
+  /**
+   * findRecordCount
+   * @return the total number of all game records in DB (JSON by url)
+   */
   @GetMapping("/game/findRecordCount")
   @ResponseBody
   @CrossOrigin(origins = "*")
@@ -46,6 +64,13 @@ public class GameRecordController {
     return recordList.size();
   }
 
+  /**
+   * findByUserId
+   * @param userId
+   * @param page
+   * @param size
+   * @return the records of a specific user in a particular page with a particular number of records in a page (JSON by url)
+   */
   @GetMapping("/game/findByUserId")
   @ResponseBody
   @CrossOrigin(origins = "*")
@@ -57,6 +82,10 @@ public class GameRecordController {
     return recordList;
   }
 
+  /**
+   * findUserIdCount
+   * @return the total number of the game records of a specific user (JSON by url)
+   */
   @GetMapping("/game/findUserIdCount")
   @ResponseBody
   @CrossOrigin(origins = "*")
@@ -67,7 +96,11 @@ public class GameRecordController {
     return recordList.size();
   }
 
-
+  /**
+   * Delete the game records of a user in DB
+   * @param userId
+   * @return a delete message
+   */
   @DeleteMapping("/game/deleteByUserId")
   @ResponseBody
   @CrossOrigin(origins = "*")
@@ -76,6 +109,11 @@ public class GameRecordController {
     return "delete success";
   }
 
+  /**
+   * Delete a game record identified by its id
+   * @param id
+   * @return a delete message
+   */
   @DeleteMapping("/game/deleteById")
   @ResponseBody
   @CrossOrigin(origins = "*")

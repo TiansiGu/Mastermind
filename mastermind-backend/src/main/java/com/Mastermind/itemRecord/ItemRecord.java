@@ -16,6 +16,7 @@ public class ItemRecord {
     int price;
     int stock;
 
+    // Constructor
     public ItemRecord(String category, String item, int price, int stock) {
         this.category = category;
         this.item = item;
@@ -23,6 +24,7 @@ public class ItemRecord {
         this.stock = stock;
     }
 
+    // Getter and Setter Methods for each data members
     public long getId() {
         return this.id;
     }
@@ -63,7 +65,10 @@ public class ItemRecord {
         this.stock = stock;
     }
 
-
+    /**
+     * Override of toString method
+     * @return a string that shows id, category, item, price, and stock
+     */
     @Override
     public String toString() {
         return "{" +

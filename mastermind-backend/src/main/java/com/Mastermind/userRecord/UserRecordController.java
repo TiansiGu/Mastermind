@@ -11,6 +11,10 @@ public class UserRecordController {
 
     private final UserRecordRepository userRecordRepository;
 
+    /**
+     * Constructor
+     * @param userRecordRepository
+     */
     public UserRecordController(UserRecordRepository userRecordRepository) {
         this.userRecordRepository = userRecordRepository;
     }
@@ -41,8 +45,7 @@ public class UserRecordController {
 
     /**
      * findAllRecords
-     *
-     * @return all the records (JSON)
+     * @return all the records (JSON by url)
      */
     @GetMapping("/user/findAllRecords")
     @ResponseBody
@@ -57,7 +60,7 @@ public class UserRecordController {
     /**
      * find the records By UserId
      * @param userId
-     * @return record (JSON)
+     * @return record (JSON by url)
      */
     @GetMapping("/user/findByUserId")
     @ResponseBody

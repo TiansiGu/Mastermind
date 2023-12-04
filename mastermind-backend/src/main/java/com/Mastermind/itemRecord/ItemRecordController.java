@@ -29,8 +29,7 @@ public class ItemRecordController {
 
 
   /**
-   * find findAllItemRecords
-   *
+   * find all item records
    * @return JSON all ItemRecords
    */
   @GetMapping("/item/findAllItemRecords")
@@ -44,7 +43,7 @@ public class ItemRecordController {
   }
 
   /**
-   * buy 1 item and update the record
+   * buy 1 item and update the record (data member stock)
    * @param id
    * @return message
    */

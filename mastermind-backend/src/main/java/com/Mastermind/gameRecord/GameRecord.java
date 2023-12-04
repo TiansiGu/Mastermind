@@ -17,12 +17,14 @@ public class GameRecord {
 
   String date;
 
+  // Constructor
   public GameRecord(String userId, int score, String date) {
     this.userId = userId;
     this.score = score;
     this.date = date;
   }
 
+  // Getter and Setter Methods for each data members
   public long getId() {
     return this.id;
   }
@@ -54,8 +56,11 @@ public class GameRecord {
   public void setDate(String date) {
     this.date=date;
   }
-  
 
+  /**
+   * Override of toString method
+   * @return a string that shows id, userId, score, and date
+   */
   @Override
   public String toString() {
     return "{" +
